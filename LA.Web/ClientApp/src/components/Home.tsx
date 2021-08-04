@@ -9,7 +9,6 @@ const Home = () => {
   const [layout, setLayout] = useState(store.layout)
   return (
     <React.Fragment>
-      {/* <button onClick={add}>Add</button> */}
       <Dashboard 
         layout={layout.map((item: Layout) => ({
           ...item,
