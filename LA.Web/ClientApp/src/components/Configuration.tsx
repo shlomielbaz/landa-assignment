@@ -13,7 +13,6 @@ const Configuration = (props: any) => {
     const store = useContext(LayoutContext);
     const [layout, setLayout] = useState(store.layout);
 
-
     useEffect(() => {
         store.layout = layout;
     }, [layout])

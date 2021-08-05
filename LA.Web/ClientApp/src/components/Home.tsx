@@ -6,7 +6,12 @@ import { Layout } from "react-grid-layout";
 
 const Home = () => {
   const store = useContext(LayoutContext);
-  const [layout, setLayout] = useState(store.layout)
+  const [layout, setLayout] = useState(store.layout);
+
+  useEffect(() => {
+
+  }, [])
+  
   return (
     <React.Fragment>
       {/* <button onClick={add}>Add</button> */}

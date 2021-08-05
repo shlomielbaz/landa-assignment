@@ -6,7 +6,7 @@ namespace LA.Domain
 {
     public interface IService<T> where T : class, new()
     {
-        IEnumerable<T> GetAll();
+        IEnumerable<T>  GetAll();
 
         T Get(Expression<Func<T, bool>> predicate);
 

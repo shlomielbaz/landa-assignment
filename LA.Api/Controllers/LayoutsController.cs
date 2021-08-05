@@ -24,9 +24,9 @@ namespace LA.Api.Controllers
         #region Actions
         // GET: api/Layout
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<LayoutViewModel> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _service.GetAll();
         }
 
         // GET: api/Layout/5
@@ -39,8 +39,8 @@ namespace LA.Api.Controllers
         // POST: api/Layout
         [HttpPost]
         [Consumes("application/json")]
-        public IActionResult Post([FromBody] JsonElement model)
-        //public void Post(LayoutViewModel model)
+        //public IActionResult Post([FromBody] JsonElement model)
+        public void Post(LayoutViewModel model)
         {
             string json = System.Text.Json.JsonSerializer.Serialize(model);
 

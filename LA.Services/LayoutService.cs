@@ -29,7 +29,7 @@ namespace LA.Services
 
         public IEnumerable<LayoutViewModel> GetAll()
         {
-            throw new NotImplementedException();
+            return _db.GetList<Layout>();
         }
 
         public void Update(LayoutViewModel entity)

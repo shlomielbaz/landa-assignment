@@ -1,0 +1,68 @@
+﻿<Properties StartupConfiguration="Multiple Projects">
+  <MonoDevelop.Ide.Workbench ActiveDocument="LA.Web/ClientApp/src/components/NavMenu.tsx">
+    <Files>
+      <File FileName="LA.Web/ClientApp/src/index.tsx" Line="17" Column="1" />
+      <File FileName="LA.Web/ClientApp/src/App.tsx" Line="1" Column="1" />
+      <File FileName="LA.Api/Controllers/LayoutsController.cs" Line="32" Column="29" />
+      <File FileName="LA.Domain/ViewModels/LayouViewModel.cs" Line="18" Column="11" />
+      <File FileName="LA.Domain/Entities/Layout.cs" Line="5" Column="33" />
+      <File FileName="LA.Domain/Interfaces/IService.cs" Line="9" Column="24" />
+      <File FileName="LA.Data/Repository.cs" Line="81" Column="10" />
+      <File FileName="LA.Data/LayoutRepository.cs" Line="11" Column="6" />
+      <File FileName="LA.Api/Startup.cs" Line="34" Column="74" />
+      <File FileName="LA.Services/LayoutService.cs" Line="32" Column="35" />
+      <File FileName="LA.Domain/Interfaces/ILayoutService.cs" Line="4" Column="63" />
+      <File FileName="LA.Web/ClientApp/src/components/Layout.tsx" Line="1" Column="1" />
+      <File FileName="LA.Web/ClientApp/src/components/NavMenu.tsx" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="landa-assignment" expanded="True">
+            <Node name="LA.Api" expanded="True">
+              <Node name="Controllers" expanded="True" />
+            </Node>
+            <Node name="LA.Data" expanded="True" />
+            <Node name="LA.Domain" expanded="True">
+              <Node name="Entities" expanded="True" />
+            </Node>
+            <Node name="LA.Services" expanded="True" />
+            <Node name="LA.Web" expanded="True">
+              <Node name="ClientApp" expanded="True">
+                <Node name="src" expanded="True">
+                  <Node name="components" expanded="True">
+                    <Node name="NavMenu.tsx" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>model</Value>
+          <Value>mod</Value>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.LA.Web PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.LA.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/shlomielbaz/Projects/landa-assignment/LA.Api/Controllers/LayoutsController.cs" relfile="LA.Api/Controllers/LayoutsController.cs" line="44" column="1" />
+      <Breakpoint file="/Users/shlomielbaz/Projects/landa-assignment/LA.Api/Controllers/LayoutsController.cs" relfile="LA.Api/Controllers/LayoutsController.cs" line="58" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="Multiple Projects" Name="Multiple Projects">
+      <Items>
+        <StartupItem ItemId="{D41C3D53-8079-43CC-A93C-388B9E3D95FD}" ItemName="LA.Api" ConfigurationId="Default" />
+        <StartupItem ItemId="{8E4CB61A-2510-40CD-B10D-20002738A408}" ItemName="LA.Web" ConfigurationId="Default" />
+      </Items>
+    </MultiItemSolutionRunConfiguration>
+  </MultiItemStartupConfigurations>
+</Properties>

@@ -47,6 +47,19 @@ class LayoutStore {
         // })
     }
 
+    @action async getLayout(layout: Layout[]) {
+        const response = await fetch(`/api/layouts`, );
+
+        
+    
+        // const data = await response.json()
+        // this.setImageUrl(data.image)
+
+        runInAction(() => {
+            this.layout = response;
+        })
+    }
+
 }
 
 const storeInstance = new LayoutStore()
