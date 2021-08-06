@@ -1,9 +1,9 @@
 ﻿import * as React from 'react';
 import { Route } from 'react-router';
-import Layout from './components/Layout';
-import Home from './components/Home';
-import Configuration from './components/Configuration';
-import LayoutList from './components/LayoutList';
+import Layout from './pages/Layout';
+import Home from './pages/Home';
+import Configuration from './pages/Configuration';
+import LayoutList from './pages/LayoutList';
 
 import './custom.css';
 import '../node_modules/react-grid-layout/css/styles.css';

@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useObserver, useLocalStore } from 'mobx-react'
+import { useObserver } from 'mobx-react'
 
 
-import Dashboard from "./Dashboard";
+import Dashboard from "../components/Dashboard";
 import { Row, Col, Button } from 'reactstrap';
 import LayoutContext from "../contexts/layout.context";
 import Layout from '../interfaces/layout.interface'

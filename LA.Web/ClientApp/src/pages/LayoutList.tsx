@@ -1,6 +1,6 @@
 import React, { Component, useContext, useEffect, useState } from "react";
 import { useObserver, useLocalStore } from 'mobx-react'
-import Dashboard from "./Dashboard";
+import Dashboard from "../components/Dashboard";
 
 import LayoutContext from "../contexts/layout.context";
 import { Layout } from "react-grid-layout";
