@@ -18,5 +18,6 @@ namespace LA.Domain
         //public List<LayoutItem> Items { get; set; }
         public long ID { get; set; }
         public string Content { get; set; }
+        public bool? Default { get; set; }
     }
 }

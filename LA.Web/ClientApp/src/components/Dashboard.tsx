@@ -7,10 +7,13 @@ import Widget from './Widget';
 
 const Dashboard = (props: any) => {
   const generateDOM = () => {
-    return props.layout.map((item: Layout, idx: number) => <div key={item.i} className="x-widget">
+
+    return props.layout && props.layout.map((item: Layout, idx: number) => <div key={item.i} className="x-widget">
       <Widget color={item.i} mode={props.mode || 'view'} onDelete={props.onDelete ? props.onDelete : () => { }}/>
-    </div>);
+    </div>) || (<div></div>);
   }
+
+  
   return (
     <div>
       <ReactGridLayout

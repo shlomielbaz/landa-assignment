@@ -2,62 +2,75 @@ import { observable, action, computed, runInAction } from 'mobx';
 import Layout from '../interfaces/layout.interface';
 
 class LayoutStore {
-    @observable private _layout: Layout[] = [
-        {  i: "#760496", x: 0, y: 0, w: 8, h: 1 },
-        {  i: "#71510c", x: 4, y: 0, w: 4, h: 1 },
-        {  i: "#5ed3c2", x: 8, y: 0, w: 4, h: 1 },
-        {  i: "#50b09c", x: 0, y: 1, w: 4, h: 1 },
-        {  i: "#4975ce", x: 4, y: 1, w: 4, h: 1 },
-        {  i: "#098e94", x: 8, y: 1, w: 4, h: 1 }
-    ];
+    @observable 
+    private layout: Layout[] = [];
 
-    get layout() {
-        return this._layout;
-    }
+    // get layout() {
+    //     return this._layout;
+    // }
 
-    set layout(v: any) {
-        this._layout = v;
-    }
+    // set layout(v: any) {
+    //     this._layout = v;
+    // }
 
-    @action async fetchLayout(layout: Layout[]) {
-        console.log(layout)
-        // const characterId = ++this.id
-        
+    @action 
+    async saveLayout(layout: Layout[]) {
 
         const response = await fetch(`/api/layouts`, {
-            method: 'POST', // *GET, POST, PUT, DELETE, etc.
-            mode: 'cors', // no-cors, *cors, same-origin
-            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-            credentials: 'same-origin', // include, *same-origin, omit
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            credentials: 'same-origin',
             headers: {
-              'Content-Type': 'application/json'
-              // 'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Type': 'application/json'
             },
-            redirect: 'follow', // manual, *follow, error
-            referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-            body: JSON.stringify(layout) // body data type must match "Content-Type" header
-          });
-
-
-        // const data = await response.json()
-        // this.setImageUrl(data.image)
-
-        // runInAction(() => {
-        //     this.imageUrl = data.image
-        // })
+            redirect: 'follow',
+            referrerPolicy: 'no-referrer',
+            body: JSON.stringify(layout)
+        });
     }
 
-    @action async getLayout(layout: Layout[]) {
-        const response = await fetch(`/api/layouts`, );
-
-        
-    
-        // const data = await response.json()
-        // this.setImageUrl(data.image)
+    @action
+    async getLayout(layout: Layout[]) {
+        // this is fake id, the reason to use it is for get the GET API for retreave one!
+        const response = await fetch(`/api/layouts/1`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(response => response.json())
+            .then((data: any) => {
+                return data && JSON.parse(data.content) || [];
+            });
 
         runInAction(() => {
             this.layout = response;
         })
+
+        return response;
+    }
+
+    @action
+    async getLayouts(layout: Layout[]) {
+        // this is fake id, the reason to use it is for get the GET API for retreave one!
+        const response = await fetch(`/api/layouts`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(response => response.json())
+            .then((data: any) => {
+                
+                return data && data.map((item: any) => JSON.parse(item.content)) || [];
+            });
+
+        runInAction(() => {
+            this.layout = response;
+        })
+
+        return response;
     }
 
 }

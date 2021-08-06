@@ -10,15 +10,17 @@ import Layout from '../interfaces/layout.interface'
 
 
 const Configuration = (props: any) => {
-    const store = useContext(LayoutContext);
-    const [layout, setLayout] = useState(store.layout);
+    const store: any = useContext(LayoutContext);
+    const [layout, setLayout] = useState([]);
 
     useEffect(() => {
-        store.layout = layout;
-    }, [layout])
+        store.getLayout().then((data: any) => {
+            setLayout(data)
+        })
+    }, [])
 
     const saveLayout = () => {
-        store.fetchLayout(layout)
+        store.saveLayout(layout)
     }
 
     const addWidget = () => {
@@ -53,8 +55,8 @@ const Configuration = (props: any) => {
             <React.Fragment>
                 <Row style={{ borderBottom: '1px solid #aaa' }}>
                     <Col lg="12" md="12" style={{ display: 'flex', justifyContent: 'flex-end', paddingBottom: '4px' }}>
-                        <Button onClick={addWidget} title={'Add to dashboard'}>Add Widget</Button>
-                        {layout.length > 0 ? <Button onClick={saveLayout} style={{ marginLeft: '5px' }} title={'Serialize layout to DB'}>Save</Button> : null}
+                        {layout.length > 0 ? <Button onClick={saveLayout} title={'Serialize layout to DB'}>Save</Button> : null}
+                        <Button onClick={addWidget} title={'Add to dashboard'} style={{ marginLeft: '5px' }}>Add Widget</Button>
                     </Col>
                 </Row>
                 <Row>

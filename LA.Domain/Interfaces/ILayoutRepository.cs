@@ -1,7 +1,7 @@
-﻿using System;
-namespace LA.Domain
+﻿namespace LA.Domain
 {
-    public interface ILayoutRepository: IRepository
+    public interface ILayoutRepository : IRepository
     {
+        
     }
 }

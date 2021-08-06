@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Text.Json;
-using System.Threading.Tasks;
 using LA.Domain;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,16 +30,16 @@ namespace LA.Api.Controllers
 
         // GET: api/Layout/5
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        public LayoutViewModel Get(int id)
         {
-            return "value";
+            return _service.GetDefault();
         }
 
         // POST: api/Layout
         [HttpPost]
         [Consumes("application/json")]
-        //public IActionResult Post([FromBody] JsonElement model)
-        public void Post(LayoutViewModel model)
+        public IActionResult Post([FromBody] JsonElement model)
+        //public IActionResult Post(LayoutViewModel model)
         {
             string json = System.Text.Json.JsonSerializer.Serialize(model);
 

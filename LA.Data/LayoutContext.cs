@@ -8,6 +8,8 @@ using LA.Domain;
 //using System.Reflection;
 using Microsoft.Extensions.Configuration;
 using System.Reflection;
+using System.IO;
+using System;
 
 namespace LA.Data
 {
@@ -15,7 +17,7 @@ namespace LA.Data
     {
         private readonly string _connectionString;
 
-        public DbSet<Layout> Events { get; set; }
+        public DbSet<Layout> Layouts { get; set; }
 
         #region CTOR
         public LayoutContext()
@@ -30,10 +32,14 @@ namespace LA.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite($"Filename=Database/layout.db", options =>
+            string dbPath = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"../", "LA.Data/Database/", "layout.db"));
+
+            optionsBuilder.UseSqlite($"Filename={dbPath}", options =>
             {
                 options.MigrationsAssembly(Assembly.GetExecutingAssembly().FullName);
             });
+
+
             base.OnConfiguring(optionsBuilder);
         }
 
