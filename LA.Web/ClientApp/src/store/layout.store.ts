@@ -15,7 +15,6 @@ class LayoutStore {
 
     @action 
     async saveLayout(layout: Layout[]) {
-
         const response = await fetch(`/api/layouts`, {
             method: 'POST',
             mode: 'cors',
@@ -47,7 +46,6 @@ class LayoutStore {
         runInAction(() => {
             this.layout = response;
         })
-
         return response;
     }
 
@@ -62,14 +60,12 @@ class LayoutStore {
         })
             .then(response => response.json())
             .then((data: any) => {
-                
                 return data && data.map((item: any) => JSON.parse(item.content)) || [];
             });
 
         runInAction(() => {
             this.layout = response;
-        })
-
+        });
         return response;
     }
 
